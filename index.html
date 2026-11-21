@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="kaa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2b1b12">
+<title>Gáwhar — bir usınıs ❤️</title>
+<style>
+:root{--coffee:#2b1b12;--brown:#583a27;--caramel:#b9854b;--gold:#e8c78d;--cream:#fff4df;--paper:#f7e8cd}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:22px;color:var(--cream);font-family:Georgia,"Times New Roman",serif;background:radial-gradient(ellipse at 15% 10%,#6c4a2d 0%,transparent 38%),radial-gradient(ellipse at 90% 90%,#8b6038 0%,transparent 35%),linear-gradient(135deg,#21140e,#432a1a 55%,#21140e);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:12px;border:1px solid rgba(232,199,141,.24);border-radius:22px;pointer-events:none}
+.card{width:min(100%,680px);padding:clamp(26px,6vw,58px);border:1px solid rgba(232,199,141,.45);border-radius:28px;background:linear-gradient(145deg,rgba(255,244,223,.09),rgba(255,244,223,.025));box-shadow:0 25px 80px #120b07aa,inset 0 1px rgba(255,255,255,.08);text-align:center;position:relative;overflow:hidden}
+.kicker{font:600 11px/1.5 Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+.ornament{color:var(--gold);font-size:22px;margin:16px 0}
+h1{font-size:clamp(36px,8vw,64px);font-weight:400;line-height:1.05;margin:16px 0;color:#fff0d2}
+p{font-size:clamp(17px,3.5vw,20px);line-height:1.75;color:#f1dfc2;margin:14px auto;max-width:510px}
+.signature{font-style:italic;color:var(--gold);margin-top:22px}
+.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+button{font:600 15px Arial,sans-serif;letter-spacing:.4px;border:0;border-radius:999px;padding:15px 28px;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+button:hover{transform:translateY(-3px)}
+.yes{background:linear-gradient(135deg,#f0d59f,#bd874b);color:#2b1b12;box-shadow:0 8px 25px #bd874b44}
+.no{background:transparent;color:#e9d3b3;border:1px solid #b8956d88}
+.no:focus-visible,.yes:focus-visible{outline:3px solid #fff0c9;outline-offset:4px}
+.hidden{display:none}
+.small{font:12px Arial,sans-serif;color:#c9ad88;margin-top:24px}
+.panel{margin-top:25px;padding:20px;border:1px solid #d2ad7b55;border-radius:18px;background:#170f0a44}
+.panel h2{font-weight:400;color:#f2d49c;font-size:27px;margin:4px 0 10px}
+.heart{display:inline-block;color:#e5b77a;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.16)}}
+.spark{position:absolute;opacity:.3;color:#e8c78d;animation:float 7s ease-in-out infinite}
+.s1{top:20px;left:22px}.s2{bottom:20px;right:25px;animation-delay:2s}
+@keyframes float{50%{transform:translateY(-12px) rotate(15deg)}}
+
+.places{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:24px 0}
+.place{padding:0;overflow:hidden;border:1px solid #d2ad7b66;border-radius:15px;background:#24170f;color:#f8e6c7;text-align:left;box-shadow:0 6px 20px #10090455}
+.place img{display:block;width:100%;height:145px;object-fit:cover;background:#4b3322}
+.place span:last-child{display:block;padding:12px 13px;font:600 13px/1.4 Arial,sans-serif}
+.place.selected{outline:2px solid #e8c78d;box-shadow:0 0 0 4px #e8c78d22}
+.place.other{min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-style:dashed}
+.other-icon{font-size:42px;color:#e8c78d;padding:10px}
+.custom-place{margin:16px 0;text-align:left}
+label{display:block;text-align:left;color:#e8c78d;font:600 13px Arial,sans-serif;margin:13px 0 8px}
+input{width:100%;border:1px solid #b8956d88;border-radius:12px;background:#1c120c;color:#fff0d2;padding:14px;font:16px Arial,sans-serif}
+input:focus{outline:2px solid #e8c78d}
+button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.form-panel{text-align:left}
+.form-panel p{margin:0}
+
+@media(max-width:480px){.card{padding:30px 22px}.actions{gap:10px}button{padding:14px 22px}}
+</style>
+</head>
+<body>
+<main class="card">
+  <span class="spark s1">✦</span><span class="spark s2">✧</span>
+  <div id="invite">
+    <div class="kicker">Bir kishi ǵana — Gáwharǵa</div>
+    <div class="ornament">✦ ❦ ✦</div>
+    <h1>Gáwhar,</h1>
+    <p>Sen menen jaqınıraq tanısıp, jaǵımlı waqıt ótkeriwdi qáleymen.</p>
+    <p>Bir kúni birge kofe ishıp, jaqsı gáplesip otırsaq qalay qaraysań? ☕</p>
+    <p>Bul kishkene usınısımǵa juwap berseń, men kúshli quwanaman.</p>
+    <div class="ornament heart">♥</div>
+    <div class="actions">
+      <button class="yes" id="yesBtn">Álbette, kelisemen ❤️</button>
+      <button class="no" id="noBtn">Yoq 🙈</button>
+    </div>
+    <div class="small">Ádepli usınıs, samimiy niyet penen.</div>
+  </div>
+  <section id="next" class="hidden">
+    <div id="restaurantStep">
+      <div class="kicker">Seniń juwabıń meni quwandırdı</div>
+      <div class="ornament heart">♥</div>
+      <h1>Raxmet, Gáwhar!</h1>
+      <p>Endi birge baratuǵın jaǵımlı jerdı tańlaymız. Qaysı jerde ushırasqıń keledi? ☕</p>
+      <div class="places" id="places">
+        <button class="place" type="button" data-place="Fusion Resto-Bar"><img src="img/Fusion Resto-Bar.webp" alt="Fusion Resto-Bar"><span>Fusion Resto-Bar</span></button>
+        <button class="place" type="button" data-place="Qaraqalpaǵım"><img src="img/qaraqalpagim.webp" alt="Qaraqalpaǵım"><span>Qaraqalpaǵım</span></button>
+        <button class="place" type="button" data-place="Sofram Restoran"><img src="img/Sofram Restoran.webp" alt="Sofram Restoran"><span>Sofram Restoran</span></button>
+        <button class="place" type="button" data-place="GARDEN TERASSA"><img src="img/GARDEN TERASSA.jpg" alt="GARDEN TERASSA"><span>GARDEN TERASSA</span></button>
+        <button class="place" type="button" data-place="Cinnamon cafe"><img src="img/Cinnamon cafe.webp" alt="Cinnamon cafe"><span>Cinnamon cafe</span></button>
+        <button class="place" type="button" data-place="Marmar Family Restaurant & Hotel"><img src="img/Marmar Family Restaurant & Hotel.jpg" alt="Marmar Family Restaurant & Hotel"><span>Marmar Family Restaurant &amp; Hotel</span></button>
+        <button class="place" type="button" data-place="Premier Lounge"><img src="img/Premier Lounge.jpg" alt="Premier Lounge"><span>Premier Lounge</span></button>
+        <button class="place other" type="button" data-place="Óziń jaqsı kórgen basqa jeriń"><span class="other-icon">✧</span><span>Yaki óziń jaqsı kórgen basqa jer</span></button>
+      </div>
+      <div class="custom-place hidden" id="customPlaceWrap">
+        <label for="customPlace">Qaysı jerge barǵıń keledi?</label>
+        <input id="customPlace" type="text" placeholder="Jerdıń atın jaz..." maxlength="100">
+      </div>
+      <div class="actions"><button class="yes" id="toDateBtn" disabled>Keyingi — sáne hám waqıt</button></div>
+    </div>
+    <div id="dateStep" class="hidden">
+      <div class="kicker">Birge kelisip alayıq</div>
+      <div class="ornament">✦ ❦ ✦</div>
+      <h1>Sáne hám waqıt</h1>
+      <p>Ózińe qolaylı sáne hám waqıttı tańla. Keyin kelisimimizdi kórsetemen.</p>
+      <div class="panel form-panel">
+        <label for="meetDate">Sáne</label>
+        <input id="meetDate" type="date" required>
+        <label for="meetTime">Waqıt</label>
+        <input id="meetTime" type="time" required>
+      </div>
+      <div class="actions">
+        <button class="no" id="backToPlaces">Artqa</button>
+        <button class="yes" id="makeAgreement">Kelisimdi kóriw ❤️</button>
+      </div>
+    </div>
+    <div id="agreementStep" class="hidden">
+      <div class="kicker">Bizdiń kishkene kelisimimiz</div>
+      <div class="ornament heart">♥</div>
+      <h1>Gáwhar &amp; Miyras</h1>
+      <p>Bir-birimizge jaǵımlı waqıt sıylaw ushın, tómendegi ushırasıwǵa kelistik:</p>
+      <div class="panel">
+        <h2>Ushırasıw kelisimi</h2>
+        <p><strong>Jeri:</strong> <span id="agreementPlace">—</span></p>
+        <p><strong>Sáne:</strong> <span id="agreementDate">—</span></p>
+        <p><strong>Waqıt:</strong> <span id="agreementTime">—</span></p>
+        <p>Bir taza kofe, jaqsı gáplesiw hám jańa estelik. Eń baslısı — ekewimizge de qolaylı hám jaǵımlı bolıwı. ✨</p>
+      </div>
+      <p class="signature">Kelisim júrek penen, húrmet hám samimiyat penen. ❤️</p>
+      <div class="actions"><button class="no" id="editPlan">Ózgertiw</button><button class="yes" id="finishBtn">Kelistik! 😊</button></div>
+      <div class="small">Bul — tek usınıs. Sáne, waqıt hám jerdi ekewimiz de maqúllasaq, kelisim boladı.</div>
+    </div>
+  </section>
+</main>
+<script>
+const invite=document.getElementById('invite'), next=document.getElementById('next');
+const restaurantStep=document.getElementById('restaurantStep');
+const dateStep=document.getElementById('dateStep');
+const agreementStep=document.getElementById('agreementStep');
+document.getElementById('yesBtn').addEventListener('click',()=>{
+ invite.classList.add('hidden'); next.classList.remove('hidden');
+ window.scrollTo({top:0,behavior:'smooth'});
+});
+/* The playful "No" button dodges; it does not open the next section. */
+const noBtn=document.getElementById('noBtn');
+const moveNoButton=()=>{
+ const card=document.querySelector('.card');
+ const cardRect=card.getBoundingClientRect(), btnRect=noBtn.getBoundingClientRect();
+ const x=14+Math.random()*Math.max(0,cardRect.width-btnRect.width-28);
+ const y=14+Math.random()*Math.max(0,cardRect.height-btnRect.height-28);
+ noBtn.style.position='absolute';
+ noBtn.style.left=Math.min(x,cardRect.width-btnRect.width-14)+'px';
+ noBtn.style.top=Math.min(y,cardRect.height-btnRect.height-14)+'px';
+ noBtn.style.zIndex='5';
+};
+noBtn.addEventListener('pointerenter',moveNoButton);
+noBtn.addEventListener('touchstart',e=>{e.preventDefault();moveNoButton();},{passive:false});
+noBtn.addEventListener('click',e=>{e.preventDefault();moveNoButton();});
+
+let selectedPlace='';
+const customWrap=document.getElementById('customPlaceWrap');
+const customInput=document.getElementById('customPlace');
+const nextBtn=document.getElementById('toDateBtn');
+document.querySelectorAll('.place').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+  document.querySelectorAll('.place').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedPlace=btn.dataset.place;
+  const isOther=selectedPlace==='Óziń jaqsı kórgen basqa jeriń';
+  customWrap.classList.toggle('hidden',!isOther);
+  nextBtn.disabled=isOther ? !customInput.value.trim() : false;
+ });
+});
+customInput.addEventListener('input',()=>{if(selectedPlace==='Óziń jaqsı kórgen basqa jeriń') nextBtn.disabled=!customInput.value.trim();});
+nextBtn.addEventListener('click',()=>{
+ if(selectedPlace==='Óziń jaqsı kórgen basqa jeriń') selectedPlace=customInput.value.trim();
+ if(!selectedPlace)return;
+ restaurantStep.classList.add('hidden');dateStep.classList.remove('hidden');
+ const today=new Date(), local=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+ document.getElementById('meetDate').min=local;
+});
+document.getElementById('backToPlaces').addEventListener('click',()=>{
+ dateStep.classList.add('hidden');restaurantStep.classList.remove('hidden');
+});
+document.getElementById('makeAgreement').addEventListener('click',()=>{
+ const date=document.getElementById('meetDate').value, time=document.getElementById('meetTime').value;
+ if(!date||!time){alert('Sáne hám waqıttı tańla, iltimas 😊');return;}
+ const d=new Date(date+'T12:00:00');
+ const formatted=d.toLocaleDateString('kaa',{year:'numeric',month:'long',day:'numeric'});
+ document.getElementById('agreementPlace').textContent=selectedPlace;
+ document.getElementById('agreementDate').textContent=formatted;
+ document.getElementById('agreementTime').textContent=time;
+ dateStep.classList.add('hidden');agreementStep.classList.remove('hidden');
+});
+document.getElementById('editPlan').addEventListener('click',()=>{
+ agreementStep.classList.add('hidden');dateStep.classList.remove('hidden');
+});
+document.getElementById('finishBtn').addEventListener('click',async()=>{
+ const button=document.getElementById('finishBtn');
+ const signature=document.querySelector('#agreementStep .signature');
+ button.disabled=true;
+ button.textContent='Jiberilip atır...';
+
+ const payload={
+  guestName:'Gáwhar',
+  hostName:'Miyras',
+  restaurant:selectedPlace,
+  date:document.getElementById('meetDate').value,
+  time:document.getElementById('meetTime').value,
+  agreement:'Ushırasıw usınısı maqúllandı',
+  submittedAt:new Date().toISOString()
+ };
+
+ try{
+  const response=await fetch('/api/send-telegram',{
+   method:'POST',
+   headers:{'Content-Type':'application/json'},
+   body:JSON.stringify(payload)
+  });
+  const result=await response.json().catch(()=>({}));
+  if(!response.ok || !result.success){
+   throw new Error(result.error || 'Email jiberiw ámelge aspadı');
+  }
+
+  document.querySelector('#agreementStep h1').textContent='Kelistik! ❤️';
+  signature.textContent='Kelisim maǵlıwmatı Miyrasqa email arqalı jiberildi. Bul kúni jaqsı estelik bolıwına tileklespen!';
+  button.textContent='Jiberildi ❤️';
+ }catch(err){
+  signature.textContent='Email jiberilmedi. Internetti yamasa server sazlamaların tekserip, qayta urınıp kóriń.';
+  button.textContent='Qayta jiberiw';
+  button.disabled=false;
+ }
+});
+</script>
+</body>
+</html>
